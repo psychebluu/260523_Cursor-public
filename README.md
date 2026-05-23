@@ -52,6 +52,19 @@ git push -u origin main
 4. Build Command: `npm run build` / Output: `.next` (기본값)
 5. Deploy
 
+### GitHub 저장소 자동 연결 (push 시 자동 배포)
+
+Vercel 프로젝트와 GitHub 저장소를 연결하려면:
+
+1. [Vercel GitHub App 설치](https://github.com/apps/vercel/installations/new)
+2. `psychebluu` 계정 선택 → `260523_Cursor-public` 저장소 접근 허용
+3. 터미널에서 `npx vercel git connect https://github.com/psychebluu/260523_Cursor-public --yes`
+
+또는 GitHub Actions 사용 (`.github/workflows/deploy.yml`):
+
+- GitHub 저장소 **Settings → Secrets → Actions** 에 `VERCEL_TOKEN` 추가
+- [Vercel Account Tokens](https://vercel.com/account/tokens)에서 토큰 생성
+
 배포 후 환경 변수(선택):
 
 | 변수 | 설명 |
