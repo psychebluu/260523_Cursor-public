@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --color-stardew-cream: #f5f0e1;
+  --color-stardew-green: #5faf5a;
+  --color-stardew-wood: #c17f3a;
+  --color-stardew-brown: #3e2723;
+  --color-stardew-win: #4caf50;
+  --color-stardew-loss: #e57373;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #f5f0e1;
+  --foreground: #3e2723;
+  --card: #fffaf0;
+  --card-foreground: #3e2723;
+  --popover: #fffaf0;
+  --popover-foreground: #3e2723;
+  --primary: #5faf5a;
+  --primary-foreground: #fffaf0;
+  --secondary: #e8dcc8;
+  --secondary-foreground: #3e2723;
+  --muted: #ebe3d3;
+  --muted-foreground: #6d4c41;
+  --accent: #c17f3a;
+  --accent-foreground: #fffaf0;
+  --destructive: #e57373;
+  --border: #d7c9b0;
+  --input: #d7c9b0;
+  --ring: #5faf5a;
+  --chart-1: #5faf5a;
+  --chart-2: #c17f3a;
+  --chart-3: #4caf50;
+  --chart-4: #e57373;
+  --chart-5: #8d6e63;
+  --radius: 1.25rem;
+  --sidebar: #fffaf0;
+  --sidebar-foreground: #3e2723;
+  --sidebar-primary: #5faf5a;
+  --sidebar-primary-foreground: #fffaf0;
+  --sidebar-accent: #e8dcc8;
+  --sidebar-accent-foreground: #3e2723;
+  --sidebar-border: #d7c9b0;
+  --sidebar-ring: #5faf5a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgb(95 175 90 / 8%) 0%, transparent 45%),
+      radial-gradient(circle at 80% 0%, rgb(193 127 58 / 10%) 0%, transparent 40%),
+      linear-gradient(180deg, #f5f0e1 0%, #ebe3d3 100%);
+    min-height: 100dvh;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.stardew-card {
+  background: linear-gradient(145deg, #fffaf0 0%, #f3ead8 100%);
+  box-shadow:
+    0 4px 0 #c9b896,
+    0 8px 24px rgb(62 39 35 / 8%);
+}
+
+.stardew-card-win {
+  border-left: 4px solid #4caf50;
+}
+
+.stardew-card-loss {
+  border-left: 4px solid #e57373;
+}
+
+.stardew-card-draw {
+  border-left: 4px solid #c17f3a;
+}
